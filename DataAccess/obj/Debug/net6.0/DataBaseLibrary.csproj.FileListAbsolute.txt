@@ -1,0 +1,12 @@
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/bin/Debug/net6.0/DataBaseLibrary.deps.json
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/bin/Debug/net6.0/DataBaseLibrary.dll
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/bin/Debug/net6.0/DataBaseLibrary.pdb
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/DataBaseLibrary.csproj.AssemblyReference.cache
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/DataBaseLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/DataBaseLibrary.AssemblyInfoInputs.cache
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/DataBaseLibrary.AssemblyInfo.cs
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/DataBaseLibrary.csproj.CoreCompileInputs.cache
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/DataBaseLibrary.dll
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/refint/DataBaseLibrary.dll
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/DataBaseLibrary.pdb
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataBaseLibrary/obj/Debug/net6.0/ref/DataBaseLibrary.dll

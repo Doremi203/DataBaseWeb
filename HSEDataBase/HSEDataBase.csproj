@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Sales\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\SalesTable\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\GoodsTable\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\BuyersTable\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\DataBase\Buyers.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\DataBase\Goods.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\DataBase\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\DataBase\Sales.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\DataBase\Shops.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Sales\Shops\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Sales\Shops\Insert.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Shops\Index.cshtml" />
+      <AdditionalFiles Include="Views\Shops\Insert.cshtml" />
+    </ItemGroup>
+
+</Project>

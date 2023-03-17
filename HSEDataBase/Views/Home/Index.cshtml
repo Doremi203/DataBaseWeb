@@ -1,0 +1,69 @@
+﻿<style>
+  .btn {
+    background-color: powderblue; 
+    transition: background-color 0.5s;
+  }
+  .btn:hover {
+    background-color: aqua; !important;
+  }
+  .btn-primary {
+    text-decoration: none;
+    background-color: lightcoral; 
+    color: white; 
+    padding: 10px 70px; 
+    font-size: 40px; 
+    border-radius: 10px; 
+    width: 100%;
+  }
+  .btn-primary:hover {
+      background-color: darkred; 
+    }
+</style>
+
+<div class="text-center">
+  <h1>Доступные таблицы</h1>
+  <div class="container text-center" style="position: sticky; margin-top: 15px">
+    <div class="row row-cols-4">
+      <div class="col">
+        <a type="button" class="btn-primary" asp-area="" asp-controller="Sales" asp-action="Index">Sales</a>
+      </div>
+      <div class="col">
+        <a type="button" class="btn-primary" asp-area="" asp-controller="Shops" asp-action="Index">Shops</a>
+      </div>
+      <div class="col">
+        <a type="button" class="btn-primary" asp-area="" asp-controller="Buyers" asp-action="Index">Buyers</a>
+      </div>
+      <div class="col">
+        <a type="button" class="btn-primary" asp-area="" asp-controller="Goods" asp-action="Index">Goods</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-start" style="margin-top: 20px;">
+  <h2>Доступные методы</h2>
+  <div class="container text-start" style="position: sticky; margin-top: 15px">
+      <div class="d-grid gap-2">
+        <div class="p-1">
+          <a type="button" class="btn" asp-area="" asp-controller="Home" asp-action="AllGoodsOfLongestNameBuyer">Получить список всех товаров, купленных покупателем с самым длинным именем</a>
+        </div>
+        <div class="p-1">
+          <a type="button" class="btn" asp-area="" asp-controller="Home" asp-action="MostExpensiveGoodCategory">Получить название категории самого дорогого товара</a>
+        </div>
+        <div class="p-1">
+          <a type="button" class="btn" asp-area="" asp-controller="Home" asp-action="MinimumSalesCity">Получить название города, в котором было потрачено меньше всего денег</a>
+        </div>
+        <div class="p-1">
+          <a type="button" class="btn" asp-area="" asp-controller="Home" asp-action="MostPopularGoodBuyers">Получить список покупателей, которые купили самый популярный товар</a>
+        </div>
+        <div class="p-1">
+          <a type="button" class="btn" asp-area="" asp-controller="Home" asp-action="MinimumNumberOfShopsInCountry">Получить наименьшее количество магазинов по всем странам</a>
+        </div>
+        <div class="p-1">
+          <a type="button" class="btn" asp-area="" asp-controller="Home" asp-action="OtherCitySales">Получить список покупок, совершенных покупателями во всех городах, отличных от города их проживания</a>
+        </div>
+        <div class="p-1">
+          <a type="button" class="btn" asp-area="" asp-controller="Home" asp-action="TotalSalesValue">Получить общую стоимость покупок, совершенных всеми покупателями</a>
+        </div>
+      </div>
+    </div>
+</div>

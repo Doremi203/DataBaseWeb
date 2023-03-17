@@ -1,0 +1,59 @@
+@model FileViewModel
+
+@{
+    ViewData["Title"] = "Ошибка базы данных";
+}
+
+<style>
+  .btn-primary {
+    text-decoration: none; 
+    padding: 15px 80px; 
+    font-size: 40px; 
+    border-radius: 10px; 
+    width: 80%;
+    }
+</style>
+
+<div style="text-align: center; position: sticky; margin-top: 20%">
+    <div>
+        <h1>Выберите файл</h1>
+    </div>
+    <form enctype="multipart/form-data" method="post">
+        <dl>
+            @*<dt>
+                <label asp-for="FileUpload.FormFile"></label>
+            </dt>*@
+            <dd>
+                <input type="file" name="formFile">
+                @*<span asp-validation-for="FileUpload.FormFile"></span>*@
+            </dd>
+        </dl>
+        <input class="btn btn-primary" type="submit" value="Upload" />
+    </form>
+</div>
+
+@*<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Files!)
+    {
+        <tr>
+            <td>
+                @System.IO.Path.GetFileName(item)
+            </td>
+            <td>
+                <form asp-action="Load">
+                    <a class="btn btn-outline-primary" asp-action="Load" asp-route-path="@item">Load</a>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-primary" asp-action="Index">Back</a>
+</div>*@

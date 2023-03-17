@@ -1,0 +1,12 @@
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/bin/Debug/net6.0/DataAccess.deps.json
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/bin/Debug/net6.0/DataAccess.dll
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/bin/Debug/net6.0/DataAccess.pdb
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/DataAccess.csproj.AssemblyReference.cache
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfoInputs.cache
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfo.cs
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/DataAccess.csproj.CoreCompileInputs.cache
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/DataAccess.dll
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/refint/DataAccess.dll
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/DataAccess.pdb
+/Users/maksimivanov/RiderProjects/HSEDataBase/DataAccess/obj/Debug/net6.0/ref/DataAccess.dll

@@ -1,0 +1,16 @@
+<style>
+  .btn-danger {
+    text-decoration: none; 
+    padding: 15px 80px; 
+    font-size: 40px; 
+    border-radius: 10px; 
+    width: 100%;
+    }
+</style>
+
+<div style="text-align: center; position: sticky; margin-top: 20%">
+    <a class="btn btn-danger" asp-action="Index" asp-route-type="@Model.Type">Ошибка</a>
+    <div>
+        <h1>@Model.Message</h1>
+    </div>
+</div>

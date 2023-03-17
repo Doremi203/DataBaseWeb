@@ -1,0 +1,100 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HSEDataBase
+build_property.RootNamespace = HSEDataBase
+build_property.ProjectDir = /Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shops/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvcHMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shops/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvcHMvSW5zZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Buyers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnV5ZXJzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Buyers/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnV5ZXJzL0luc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/File/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmlsZS9VcGxvYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Goods/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR29vZHMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Goods/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR29vZHMvSW5zZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Home/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Sales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Sales/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZXMvSW5zZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/DataBaseError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0RhdGFCYXNlRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/Load.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0xvYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/_LayoutTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRUYWJsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-g2cahq951b

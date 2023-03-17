@@ -1,0 +1,23 @@
+@model FileViewModel
+
+<style>
+  .btn-primary {
+    text-decoration: none; 
+    padding: 15px 80px; 
+    font-size: 40px; 
+    border-radius: 10px; 
+    width: 80%;
+    }
+</style>
+
+<div style="text-align: center; position: sticky; margin-top: 20%">
+    <div>
+        <h1>Выберите файл</h1>
+    </div>
+    <form asp-action="Upload" asp-route-type="@Model.Type" enctype="multipart/form-data" method="post">
+        <dd>
+            <input type="file" name="formFile">
+        </dd>
+        <input class="btn btn-primary" type="submit" value="Upload" />
+    </form>
+</div>

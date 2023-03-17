@@ -1,0 +1,49 @@
+@model BuyerViewModel
+
+<h1>@ViewData["Title"]</h1>
+@if (ViewData["Title"]!.ToString() == "Buyers table")
+{
+    <div>
+        <a type="button" class="btn btn-outline-dark" asp-action="Create">Create</a>
+        <a type="button" class="btn btn-outline-dark" asp-controller="File" asp-action="Upload" asp-route-type="Buyers">Upload</a>
+        <a type="button" class="btn btn-outline-dark" asp-action="Save">Download</a>
+        <a type="button" class="btn btn-outline-primary" asp-action="Insert">Insert</a>
+    </div>
+}
+
+@if (Model.Buyers is not null)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>City</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Buyers!)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

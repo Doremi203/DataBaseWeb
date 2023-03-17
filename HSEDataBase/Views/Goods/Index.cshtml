@@ -1,0 +1,48 @@
+@model GoodViewModel
+
+<h1>@ViewData["Title"]</h1>
+@if (ViewData["Title"]!.ToString() == "Goods table")
+{
+    <div>
+        <a type="button" class="btn btn-outline-dark" asp-action="Create">Create</a>
+        <a type="button" class="btn btn-outline-dark" asp-controller="File" asp-action="Upload" asp-route-type="Goods">Upload</a>
+        <a type="button" class="btn btn-outline-dark" asp-action="Save">Download</a>
+        <a type="button" class="btn btn-outline-primary" asp-action="Insert">Insert</a>
+    </div>
+}
+@if (Model.Goods is not null)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>ShopId</th>
+            <th>Category</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Goods!)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShopId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
