@@ -36,6 +36,10 @@ public class HomeController : Controller
         {
             return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка, недостаточно информации для вывода"});
         }
+        catch (NullReferenceException)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel { Message = "В таблицах присутсвуют некорректные данные, вычисления невозможны" });
+        }
     }
 
     public IActionResult MostExpensiveGoodCategory()
@@ -50,6 +54,10 @@ public class HomeController : Controller
         catch (DataBaseException)
         {
             return View("DataBaseError", new DataBaseErrorViewModel{Message = "Недостаточно данных, чтобы вычислить категорию"});
+        }
+        catch (NullReferenceException)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel { Message = "В таблицах присутсвуют некорректные данные, вычисления невозможны" });
         }
     }
 
@@ -66,6 +74,10 @@ public class HomeController : Controller
         {
             return View("DataBaseError", new DataBaseErrorViewModel{Message = "Недостаточно данных, чтобы вычислить город"});
         }
+        catch (NullReferenceException)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel { Message = "В таблицах присутсвуют некорректные данные, вычисления невозможны" });
+        }
     }
 
     public IActionResult MostPopularGoodBuyers()
@@ -79,6 +91,10 @@ public class HomeController : Controller
         catch (DataBaseException)
         {
             return View("DataBaseError", new DataBaseErrorViewModel{Message = "Недостаточно данных, чтобы составить список покупателей"});
+        }
+        catch (NullReferenceException)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel { Message = "В таблицах присутсвуют некорректные данные, вычисления невозможны" });
         }
     }
 
@@ -95,6 +111,10 @@ public class HomeController : Controller
         {
             return View("DataBaseError", new DataBaseErrorViewModel{Message = "Недостаточно данных, чтобы вычислить число магазинов"});
         }
+        catch (NullReferenceException)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel { Message = "В таблицах присутсвуют некорректные данные, вычисления невозможны" });
+        }
     }
 
     public IActionResult OtherCitySales()
@@ -108,6 +128,10 @@ public class HomeController : Controller
         catch (DataBaseException)
         {
             return View("DataBaseError", new DataBaseErrorViewModel{Message = "Недостаточно данных, чтобы составить список продаж"});
+        }
+        catch (NullReferenceException)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel { Message = "В таблицах присутсвуют некорректные данные, вычисления невозможны" });
         }
     }
 

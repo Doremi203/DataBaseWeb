@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using DataAccess.Exceptions;
 using DataAccess.Interfaces;
 using DataAccess.Models;
@@ -71,6 +70,7 @@ public class DataAccessLayer : IDataAccessLayer
         if (!sales.Any() || !goods.Any())
             return shops.First().City;
 
+        // Поиск магазина в котором не было покупок вообще
         var x = shops.Find(shop => !sales.Select(sale => sale.ShopId).Contains(shop.Id));
         if (x is not null)
             return x.City;
