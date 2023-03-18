@@ -1,4 +1,5 @@
 using HSEDataBase.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HSEDataBase.Services;
 
@@ -7,28 +8,16 @@ namespace HSEDataBase.Services;
 /// </summary>
 public class FileUploadService : IFileUploadService
 {
-    /// <summary>
-    /// Метод загрузки таблицы на сервер.
-    /// </summary>
-    /// <param name="formFile">Форма, содержащая файл.</param>
-    /// <param name="type">Тип таблицы.</param>
-    /// <returns>Возвращает true, если файл успешно загружен и false, если нет.</returns>
-    public bool UploadFile(IFormFile formFile, string type)
+    public string UploadFile(IFormFile formFile)
     {
-        try
+        if (formFile.Length > 0 && (formFile.FileName.EndsWith(".txt") || formFile.FileName.EndsWith(".json")))
         {
-            if (formFile.Length > 0 && (formFile.FileName.EndsWith(".txt") || formFile.FileName.EndsWith(".json")))
-            {
-                using var fs = new FileStream(@$"Data/{type}.json", FileMode.Create);
-                formFile.CopyTo(fs);
-                return true;
-            }
+            var path = Path.GetTempFileName();
+            using var fs = new FileStream(path, FileMode.Open);
+            formFile.CopyTo(fs);
+            return path;
+        }
 
-            return false;
-        }
-        catch
-        {
-            return false;
-        }
+        throw new FileLoadException("Попытка загрузки пустого файла или файла с неверным расширением. Используйте расширение txt или json");
     }
 }

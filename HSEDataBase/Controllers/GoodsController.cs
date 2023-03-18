@@ -1,6 +1,7 @@
 using DataAccess.Exceptions;
 using DataAccess.Interfaces;
 using DataAccess.Models;
+using HSEDataBase.Interfaces;
 using HSEDataBase.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +13,12 @@ namespace HSEDataBase.Controllers;
 public class GoodsController : Controller
 {
     private readonly IDataBase _dataBase;
+    private readonly IFileUploadService _fileUploadService;
 
-    public GoodsController(IDataBase dataBase)
+    public GoodsController(IDataBase dataBase, IFileUploadService fileUploadService)
     {
         _dataBase = dataBase;
+        _fileUploadService = fileUploadService;
     }
     
     // GET
@@ -26,7 +29,7 @@ public class GoodsController : Controller
         {
             return View(new GoodViewModel{Goods = _dataBase.GetTable<Good>()});
         }
-        catch
+        catch (DataBaseException)
         {
             return View(new GoodViewModel());
         }
@@ -79,20 +82,39 @@ public class GoodsController : Controller
     }
 
     /// <summary>
-    /// Get запрос загрузки файла покупателей.
+    /// Get запрос загрузки файла товаров.
     /// </summary>
     /// <returns></returns>
-    public IActionResult Load()
+    public IActionResult Upload()
+    {
+        return View();
+    }
+
+    /// <summary>
+    /// Post запрос загрузки файла товаров.
+    /// </summary>
+    /// <returns></returns>
+    [HttpPost]
+    public IActionResult Upload(IFormFile formFile)
     {
         try
         {
-            _dataBase.Deserialize<Good>(@"Data/Goods.json");
-            System.IO.File.Delete(@"Data/Goods.json");
+            var path = _fileUploadService.UploadFile(formFile);
+            _dataBase.Deserialize<Good>(path);
+            System.IO.File.Delete(path);
             return RedirectToAction("Index");
         }
-        catch
+        catch (DataBaseException e)
         {
-            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка Десериализации"});
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (FileLoadException e)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (Exception)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка загрузки файла"});
         }
     }
 
@@ -100,16 +122,23 @@ public class GoodsController : Controller
     /// Get запрос сохранения файла с товарами.
     /// </summary>
     /// <returns></returns>
-    public IActionResult Save()
+    public IActionResult Download()
     {
         try
         {
-            _dataBase.Serialize<Good>(@"Data/Goods.json");
-            return RedirectToAction("Download","File", new {type = "Goods"});
+            var path = Path.GetTempFileName();
+            _dataBase.Serialize<Good>(path);
+            var fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+            System.IO.File.Delete(path);
+            return File(fs, "text/plain", "Goods.json");
         }
-        catch
+        catch (DataBaseException e)
         {
-            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка сериализации"});
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (Exception)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка скачивания файла"});
         }
     }
 }

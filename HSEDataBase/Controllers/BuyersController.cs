@@ -1,6 +1,7 @@
 using DataAccess.Exceptions;
 using DataAccess.Interfaces;
 using DataAccess.Models;
+using HSEDataBase.Interfaces;
 using HSEDataBase.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +13,12 @@ namespace HSEDataBase.Controllers;
 public class BuyersController : Controller
 {
     private readonly IDataBase _dataBase;
+    private readonly IFileUploadService _fileUploadService;
 
-    public BuyersController(IDataBase dataBase)
+    public BuyersController(IDataBase dataBase, IFileUploadService fileUploadService)
     {
         _dataBase = dataBase;
+        _fileUploadService = fileUploadService;
     }
     
     // GET
@@ -26,7 +29,7 @@ public class BuyersController : Controller
         {
             return View(new BuyerViewModel{Buyers = _dataBase.GetTable<Buyer>()});
         }
-        catch
+        catch (DataBaseException)
         {
             return View(new BuyerViewModel());
         }
@@ -82,17 +85,36 @@ public class BuyersController : Controller
     /// Get запрос загрузки файла покупателей.
     /// </summary>
     /// <returns></returns>
-    public IActionResult Load()
+    public IActionResult Upload()
+    {
+        return View();
+    }
+
+    /// <summary>
+    /// Post запрос загрузки файла покупателей.
+    /// </summary>
+    /// <returns></returns>
+    [HttpPost]
+    public IActionResult Upload(IFormFile formFile)
     {
         try
         {
-            _dataBase.Deserialize<Buyer>(@"Data/Buyers.json");
-            System.IO.File.Delete(@"Data/Buyers.json");
+            var path = _fileUploadService.UploadFile(formFile);
+            _dataBase.Deserialize<Buyer>(path);
+            System.IO.File.Delete(path);
             return RedirectToAction("Index");
         }
-        catch
+        catch (DataBaseException e)
         {
-            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка Десериализации"});
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (FileLoadException e)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (Exception)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка загрузки файла"});
         }
     }
 
@@ -100,16 +122,23 @@ public class BuyersController : Controller
     /// Get запрос сохранения файла с покупателями.
     /// </summary>
     /// <returns></returns>
-    public IActionResult Save()
+    public IActionResult Download()
     {
         try
         {
-            _dataBase.Serialize<Buyer>(@"Data/Buyers.json");
-            return RedirectToAction("Download","File", new {type = "Buyers"});
+            var path = Path.GetTempFileName();
+            _dataBase.Serialize<Buyer>(path);
+            var fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+            System.IO.File.Delete(path);
+            return File(fs, "text/plain", "Buyers.json");
         }
-        catch
+        catch (DataBaseException e)
         {
-            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка сериализации"});
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (Exception)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка скачивания файла"});
         }
     }
 }

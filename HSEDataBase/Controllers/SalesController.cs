@@ -1,6 +1,7 @@
 using DataAccess.Exceptions;
 using DataAccess.Interfaces;
 using DataAccess.Models;
+using HSEDataBase.Interfaces;
 using HSEDataBase.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +13,12 @@ namespace HSEDataBase.Controllers;
 public class SalesController : Controller
 {
     private readonly IDataBase _dataBase;
+    private readonly IFileUploadService _fileUploadService;
 
-    public SalesController(IDataBase dataBase)
+    public SalesController(IDataBase dataBase, IFileUploadService fileUploadService)
     {
         _dataBase = dataBase;
+        _fileUploadService = fileUploadService;
     }
     // GET
     public IActionResult Index()
@@ -25,7 +28,7 @@ public class SalesController : Controller
         {
             return View(new SaleViewModel{Sales = _dataBase.GetTable<Sale>()});
         }
-        catch
+        catch (DataBaseException)
         {
             return View(new SaleViewModel());
         }
@@ -76,22 +79,41 @@ public class SalesController : Controller
             return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
         }
     }
-
+    
     /// <summary>
     /// Get запрос загрузки файла продаж.
     /// </summary>
     /// <returns></returns>
-    public IActionResult Load()
+    public IActionResult Upload()
+    {
+        return View();
+    }
+
+    /// <summary>
+    /// Post запрос загрузки файла продаж.
+    /// </summary>
+    /// <returns></returns>
+    [HttpPost]
+    public IActionResult Upload(IFormFile formFile)
     {
         try
         {
-            _dataBase.Deserialize<Sale>(@"Data/Sales.json");
-            System.IO.File.Delete(@"Data/Sales.json");
+            var path = _fileUploadService.UploadFile(formFile);
+            _dataBase.Deserialize<Sale>(path);
+            System.IO.File.Delete(path);
             return RedirectToAction("Index");
         }
-        catch
+        catch (DataBaseException e)
         {
-            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка Десериализации"});
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (FileLoadException e)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (Exception)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка загрузки файла"});
         }
     }
 
@@ -99,16 +121,23 @@ public class SalesController : Controller
     /// Get запрос сохранения файла с продажами.
     /// </summary>
     /// <returns></returns>
-    public IActionResult Save()
+    public IActionResult Download()
     {
         try
         {
-            _dataBase.Serialize<Sale>(@"Data/Sales.json");
-            return RedirectToAction("Download","File", new {type = "Sales"});
+            var path = Path.GetTempFileName();
+            _dataBase.Serialize<Sale>(path);
+            var fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+            System.IO.File.Delete(path);
+            return File(fs, "text/plain", "Sales.json");
         }
-        catch
+        catch (DataBaseException e)
         {
-            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка сериализации"});
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = e.Message});
+        }
+        catch (Exception)
+        {
+            return View("DataBaseError", new DataBaseErrorViewModel{Message = "Ошибка скачивания файла"});
         }
     }
 }

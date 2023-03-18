@@ -5,9 +5,5 @@ namespace HSEDataBase.Models;
 /// </summary>
 public class DataBaseErrorViewModel
 {
-    /// <summary>
-    /// Хранит информацию откуда было брошено исключение.
-    /// </summary>
-    public string? Type { get; init; }
     public string? Message { get; init; }
 }

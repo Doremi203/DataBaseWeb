@@ -35,10 +35,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnV5ZXJzL0luc2VydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/File/Upload.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmlsZS9VcGxvYWQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Goods/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR29vZHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -75,12 +71,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/Load.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0xvYWQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/_LayoutTable.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRUYWJsZS5jc2h0bWw=
+[/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1VwbG9hZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/maksimivanov/RiderProjects/HSEDataBase/HSEDataBase/Views/Shared/_ValidationScriptsPartial.cshtml]

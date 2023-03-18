@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace HSEDataBase.Interfaces;
 
 /// <summary>
@@ -5,5 +7,10 @@ namespace HSEDataBase.Interfaces;
 /// </summary>
 public interface IFileUploadService
 {
-    bool UploadFile(IFormFile file, string type);
+    /// <summary>
+    /// Метод создания получения пути temp файла используемого для загрузки информации из файла на сервер.
+    /// </summary>
+    /// <param name="file">Форма содержащая файл.</param>
+    /// <returns>Путь созданного temp файла.</returns>
+    string UploadFile(IFormFile file);
 }
